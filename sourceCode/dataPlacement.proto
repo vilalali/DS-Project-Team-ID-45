@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+service DataPlacementService {
+  rpc PlaceReplica (ReplicaRequest) returns (ReplicaResponse);
+}
+
+message ReplicaRequest {
+  string dataId = 1;
+  string targetNode = 2;
+}
+
+message ReplicaResponse {
+  bool success = 1;
+  string message = 2;
+}
